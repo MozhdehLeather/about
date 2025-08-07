@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Guruvayoor Temple</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #f8f4e9;
+            --paper: #fffef7;
+            --brown: #5c4d3d;
+            --gold: #c9a769;
+            --dark-brown: #3a2e24;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--cream);
+            color: var(--brown);
+            font-family: 'Crimson Pro', serif;
+            line-height: 1.8;
+            background-image: url('https://www.transparenttextures.com/patterns/rice-paper.png');
+        }
+        
+        .page-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .storybook {
+            background-color: var(--paper);
+            border-radius: 4px;
+            box-shadow: var(--shadow);
+            padding: 3rem;
+            position: relative;
+            border: 1px solid rgba(92, 77, 61, 0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .storybook::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 30px;
+            right: 30px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .storybook::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 30px;
+            right: 30px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 4px 4px 0 0;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: var(--dark-brown);
+            text-align: center;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+        
+        .subtitle {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--brown);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .chapter {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .chapter-title {
+            font-size: 1.8rem;
+            color: var(--dark-brown);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: inline-block;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.5rem;
+        }
+        
+        .chapter-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            hyphens: auto;
+        }
+        
+        .illuminated {
+            background-color: rgba(201, 167, 105, 0.1);
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .illuminated::before {
+            content: "❝";
+            position: absolute;
+            top: 0;
+            left: 10px;
+            font-size: 3rem;
+            color: rgba(201, 167, 105, 0.3);
+            line-height: 1;
+        }
+        
+        .highlight-box {
+            background-color: rgba(92, 77, 61, 0.05);
+            border-radius: 4px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px dashed rgba(92, 77, 61, 0.2);
+        }
+        
+        .highlight-title {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .highlight-title::before, .highlight-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(92, 77, 61, 0.2);
+            margin: 0 1rem;
+        }
+        
+        .highlight-item {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .highlight-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        
+        .temple-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid rgba(92, 77, 61, 0.1);
+        }
+        
+        .footer-note {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            text-align: center;
+            color: var(--brown);
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(92, 77, 61, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .page-container {
+                padding: 1rem;
+            }
+            
+            .storybook {
+                padding: 2rem 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .chapter-title {
+                font-size: 1.5rem;
+            }
+            
+            .chapter-content {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="storybook">
+            <h1>About Guruvayoor Temple</h1>
+            <p class="subtitle">The Dwarka of the South</p>
+            
+            <div class="chapter">
+                
+                <div class="illuminated">
+                    Guruvayoor Temple is one of the most prominent and sacred Hindu temples in South India, often called the 'Dwarka of the South'. This holy site is a hub of devotion, tradition, and cultural richness.
+                </div>
+                
+                <div class="chapter-content">
+                    <p>Nestled in the town of Guruvayur, Kerala, this sacred temple is dedicated to Lord Krishna, revered here as 'Unnikrishnan' - the divine child form of Krishna. The temple holds an esteemed place in the hearts of millions of devotees who flock here seeking blessings.</p>
+                    
+                    <p>The presiding deity is believed to be over 5,000 years old and was once worshipped by Lord Krishna Himself in Dwaraka. Legend has it that after the submergence of Dwaraka, the idol was brought to Kerala by Guru (the preceptor of the gods) and Vayu (the wind god), giving the temple its name - Guruvayoor (Guru+Vayu+Oor).</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <div class="highlight-title">Temple Highlights</div>
+                    
+                    <div class="highlight-item">
+                        The main deity is made of a rare stone called Patala Anjanam and portrays Krishna in a standing posture with four arms (Chathurbahu).
+                    </div>
+                    
+                    <div class="highlight-item">
+                        Temple rituals are conducted in accordance with centuries-old Tantric and Vedic traditions, preserving ancient worship methods.
+                    </div>
+                    
+                    <div class="highlight-item">
+                        Thousands of devotees perform offerings like Thulabharam (weighing oneself against offerings), Archana, and special poojas daily.
+                    </div>
+                    
+                    <div class="highlight-item">
+                        Guruvayoor Ekadasi and Janmashtami are celebrated with grand spiritual and cultural events that attract devotees worldwide.
+                    </div>
+                    
+                    <div class="highlight-item">
+                        Elephants are an integral part of temple culture. Punnathur Kotta, the elephant sanctuary, houses the temple's majestic elephants.
+                    </div>
+                    
+                    <div class="highlight-item">
+                        More than just a religious center, Guruvayoor represents Kerala's spiritual identity and cultural heritage.
+                    </div>
+                </div>
+                
+                <div class="chapter-content">
+                    <p>The temple's architecture follows the traditional Kerala style, with its golden flagstaff (Kodimaram) and exquisite murals depicting scenes from Krishna's life. The sanctum sanctorum, with its copper-plated roof and gold-plated flag post, radiates divine energy.</p>
+                    
+                    <p>What makes Guruvayoor unique is its strict adherence to traditions. The temple maintains ancient customs like the Nirmalya Darshan (early morning viewing of the deity adorned with previous day's flowers) and Seeveli (procession of elephants and percussion ensembles).</p>
+                </div>
+            </div>
+            
+            <p class="footer-note">
+                Visitors are requested to follow the traditional dress code (men: dhoti; women: sari/mundum neriyathum) and maintain the sanctity of the temple premises.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
